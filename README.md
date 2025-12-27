@@ -16,7 +16,7 @@ It provides secure APIs for user authentication, course and lecture management, 
 * 🧾 Subscription-based access control
 * 🛡 Centralized error handling
 * 🧩 Modular and scalable architecture
-* 📡 RESTful REST APIs
+* 📡 RESTful APIs
 
 ---
 
@@ -30,22 +30,22 @@ It provides secure APIs for user authentication, course and lecture management, 
 * **Payments**: Razorpay
 * **Logging**: Morgan
 * **Environment Management**: Dotenv
+* **Testing**: Jest, Supertest
 
 ---
 
 ## 📂 Project Structure
 
 ```
-server/
-│── controllers/
-│── models/
-│── routes/
-│── middlewares/
-│── utils/
-│── config/
-│── app.js
-│── server.js
-│── package.json
+controllers/
+models/
+routes/
+middlewares/
+utils/
+config/
+app.js
+server.js
+package.json
 ```
 
 ---
@@ -72,7 +72,7 @@ RAZORPAY_SECRET=your_secret
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/lms-backend.git
+git clone https://github.com/Shubham68201/lms-backend.git
 cd lms-backend
 ```
 
@@ -93,6 +93,21 @@ Server will start at:
 ```
 http://localhost:5000
 ```
+
+---
+
+## 🧪 Testing
+
+The backend includes **unit and integration tests** using **Jest** and **Supertest**.
+
+* **Run tests**
+
+```bash
+npm test
+```
+
+* Tests cover authentication, course & lecture APIs, and payment routes.
+* Uses a separate test database to avoid affecting production data.
 
 ---
 
@@ -153,3 +168,4 @@ http://localhost:5000
 
 **Shubham Bharti**
 Backend / Full Stack Developer
+GitHub: [Shubham68201](https://github.com/Shubham68201)
