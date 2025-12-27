@@ -14,7 +14,7 @@ export const contactUs = asyncHandler(async (req, res, next) => {
 
   // Checking if values are valid
   if (!name || !email || !message) {
-    return next(new AppError('Name, Email, Message are required'));
+    return next(new AppError('Name, Email, Message are required',400));
   }
 
   try {

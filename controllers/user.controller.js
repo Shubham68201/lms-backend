@@ -29,6 +29,11 @@ export const registerUser = asyncHandler(async (req, res, next) => {
     return next(new AppError('All fields are required', 400));
   }
 
+  //Manual validation for name length
+  if (fullName.length < 5) {
+    return next(new AppError('Name must be at least 5 characters', 400));
+  }
+
   // Check if the user exists with the provided email
   const userExists = await User.findOne({ email });
 

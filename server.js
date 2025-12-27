@@ -12,16 +12,21 @@ v2.config({
 });
 
 // Razorpay configuration
-export const razorpay = new Razorpay({
+const razorpay = process.env.NODE_ENV === 'test' 
+  ? null 
+  :new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_SECRET,
 });
+export { razorpay };
 
 const PORT = process.env.PORT || 5000;
 
-
+// Only start server if not in test mode
+if (process.env.NODE_ENV !== 'test') {
 app.listen(PORT, async () => {
   // Connect to DB
   await connectToDB();
   console.log(`App is running at http://localhost:${PORT}`);
 });
+}
